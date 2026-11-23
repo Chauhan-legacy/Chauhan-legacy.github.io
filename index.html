@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Thinker – Priyansh Chauhan</title>
 <meta name="description" content="Priyansh Chauhan is a BSc AI &amp; Data Science student in Ahmedabad building tools with real data: space, research and analytics.">
-<meta name="theme-color" content="#15191b">
+<meta name="theme-color" content="#f1f2f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1112" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%AA%90%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://chauhan-legacy.github.io/">
+<meta property="og:url" content="https://chauhan-legacy.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Thinker – Priyansh Chauhan">
 <meta property="og:description" content="Always questioning. Always exploring. Projects and a journey of learning and creation.">
@@ -75,30 +79,40 @@ section{padding:120px 0 0}
 .cols h3{font-size:1.5rem;margin-bottom:8px}
 .cols p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.7}
 .cols div{border-top:1px solid var(--gold);padding-top:16px}
-.q{border-top:1px solid var(--line);padding:30px 0;display:grid;grid-template-columns:200px 1fr;gap:30px}
-.q:last-child{border-bottom:1px solid var(--line)}
-.q h3{font-size:1.7rem;font-style:italic}
-.q p{margin:0;color:var(--muted);max-width:56ch;align-self:center}
 .tl{display:grid;grid-template-columns:200px 1fr;gap:12px 30px}
 .tl dt{font-family:"Cormorant Garamond",serif;font-size:1.5rem;padding:18px 0 0;border-top:1px solid var(--line)}
 .tl dd{margin:0;padding:18px 0 14px;border-top:1px solid var(--line);color:var(--muted)}
 .tl dd b{display:block;color:var(--ink);font-weight:400}
 .tl .now{color:var(--gold)}
 footer{padding:150px 0 90px}
-footer h2{font-size:clamp(2.6rem,8vw,5.5rem);margin-bottom:26px}
+footer h2{font-size:clamp(2.2rem,6vw,4.2rem);margin-bottom:26px}
 footer p{color:var(--muted);max-width:44ch;margin:0 0 30px}
 footer .mail{font-family:"Cormorant Garamond",serif;font-size:1.7rem;border-bottom:1px solid var(--gold);padding-bottom:4px;word-break:break-all}
 footer .small{margin:40px 0 0;font-size:.85rem}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .js .rv.in{opacity:1;transform:none}
 @media (max-width:760px){.sh,.row,.q,.tl{grid-template-columns:1fr;gap:8px}.cols{grid-template-columns:1fr}.cipher{position:static;order:2;margin:44px 0 0}.cue{display:none}.big{margin-left:0}section{padding-top:84px}.st{margin-top:4px;text-align:left;max-width:none}}
+
+.lang{display:flex;align-items:center;gap:28px;border:1px solid var(--line);padding:26px 30px;margin-top:64px;transition:border-color .4s}
+.lang:hover{border-color:var(--gold)}
+.lang svg{width:84px;height:92px;flex:none;fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
+.lang h3{font-size:1.6rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid var(--line);padding:3px 16px;font-size:.92rem}
+@media (max-width:760px){.lang{flex-direction:column;align-items:flex-start;gap:16px}}
+.tg{background:none;border:1px solid var(--line);color:var(--muted);padding:4px 14px;font:300 .85rem "Jost",sans-serif;letter-spacing:.03em;cursor:pointer;flex:none;transition:color .3s,border-color .3s}
+.tg:hover{color:var(--gold);border-color:var(--gold)}
+.bar nav{min-width:0}
+.more{margin:30px 0 0}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px}
 </style>
 </head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
 <header class="bar"><div class="wrap">
 <a class="mark" href="#top">The Thinker</a>
-<nav><a href="#projects">Projects</a><a href="#interests">Interests</a><a href="#thoughts">Thoughts</a><a href="#journey">Journey</a><a href="#contact">Contact</a></nav>
+<nav><a href="#projects">Projects</a><a href="#interests">Interests</a><a href="#journey">Journey</a><a href="#contact">Contact</a></nav>
+<button class="tg" id="tg" type="button" aria-label="Switch between light and dark">Theme</button>
 </div><div class="prog" id="prog"></div></header>
 
 <main class="wrap" id="top">
@@ -124,9 +138,10 @@ footer .small{margin:40px 0 0;font-size:.85rem}
 <div class="row"><h3>Synapse</h3><div><p>A platform for making sense of signals. It is tested on data with known answers so results can be judged fairly.</p><a class="go" href="https://github.com/Chauhan-legacy/Synapsev1">GitHub</a></div><span class="st">Signal Intelligence</span></div>
 <div class="row"><h3>Sentiment Analyser</h3><div><p>Reads a piece of text and tells whether the feeling behind it is positive or negative. It turns opinions into something you can measure.</p><a class="go" href="https://github.com/Chauhan-legacy/Sentiment-AnalyserV">GitHub</a></div><span class="st">Artificial Intelligence</span></div>
 <div class="row"><h3>Secure Authentication System</h3><div><p>A login system built to keep user accounts safe. It checks who is signing in before letting them in.</p><a class="go" href="https://github.com/Chauhan-legacy/Secure_authentication_systemV1">GitHub</a></div><span class="st">Cybersecurity</span></div>
-<div class="row"><h3>Future Interns DS-01</h3><div><p>Business sales performance analytics. It turns sales data into a dashboard of sales, products and regions.</p><a class="go" href="https://github.com/Chauhan-Priyansh/FUTURE_DS_01">GitHub</a></div><span class="st">Data Analytics</span></div>
-<div class="row"><h3>Future Interns DS-02</h3><div><p>Customer retention and churn analysis. It studies why customers leave and which ones are likely to stay.</p><a class="go" href="https://github.com/Chauhan-Priyansh/FUTURE_DS_02">GitHub</a></div><span class="st">Data Analytics</span></div>
+<div class="row"><h3>Business Sales Performance Analytics</h3><div><p>Turns raw sales data into a dashboard of sales, products and regions. It shows what sells and where.</p><a class="go" href="https://github.com/Chauhan-Priyansh/FUTURE_DS_01">GitHub</a></div><span class="st">Data Analytics</span></div>
+<div class="row"><h3>Customer Retention &amp; Churn Analysis</h3><div><p>Studies why customers leave and which ones are likely to stay. It helps a business keep the customers it has.</p><a class="go" href="https://github.com/Chauhan-Priyansh/FUTURE_DS_02">GitHub</a></div><span class="st">Data Analytics</span></div>
 </div>
+<p class="more"><a class="go" href="https://github.com/Chauhan-legacy">See everything on GitHub</a></p>
 </section>
 
 <section id="curious">
@@ -135,26 +150,25 @@ footer .small{margin:40px 0 0;font-size:.85rem}
 </section>
 
 <section id="interests">
-<div class="sh"><h2>Interests</h2><p>What keeps pulling me back.</p></div>
+<div class="sh"><h2>Interests</h2><p>Exploring the unknown, understanding how it works, and engineering solutions with science, mathematics and technology.</p></div>
 <div class="cols">
-<div><h3>Space and exoplanets</h3><p>Planets around other stars, and what real telescope data can tell us.</p></div>
-<div><h3>Physics with AI</h3><p>Using machine learning where the answers can be checked against reality.</p></div>
-<div><h3>Defence technology</h3><p>Satellites, sensing, communication and secure systems built to protect people.</p></div>
-<div><h3>Hardware and field tech</h3><p>Cyberdecks, drones, solar power and radio that works far from the grid.</p></div>
-<div><h3>Signals and security</h3><p>Finding patterns in noisy data, and spotting what does not belong.</p></div>
-<div><h3>Visual storytelling</h3><p>Films and interfaces that make hard ideas easy to feel.</p></div>
-<div><h3>Learning in public</h3><p>Sharing the work and the mistakes, so others can learn from both.</p></div>
+<div><h3>Science and Fundamental Research</h3><p>Astrophysics, quantum physics, plasma physics, gravitational waves, space-time and relativity</p></div>
+<div><h3>Aerospace and Space Technology</h3><p>Satellite systems, orbital mechanics, propulsion, NASA and ISRO missions, space-based observation</p></div>
+<div><h3>AI and Data Science</h3><p>Machine learning, deep learning, scientific machine learning, anomaly detection, astronomical data mining</p></div>
+<div><h3>Mathematics</h3><p>Linear algebra, differential equations, Fourier analysis, topology, statistical modelling</p></div>
+<div><h3>Computer Science and Engineering</h3><p>Python, backend and APIs, databases, distributed systems, local-first computing, open source</p></div>
+<div><h3>Defence and Strategic Technology</h3><p>Defence technology, cybersecurity, secure authentication, embedded systems, autonomous systems</p></div>
+<div><h3>Emerging Technologies</h3><p>Quantum computing, high-performance computing, edge computing, robotics, ESP32 microcontrollers</p></div>
+<div><h3>Research and Innovation</h3><p>Knowledge graphs, scientific visualisation, research paper intelligence, independent research and development</p></div>
+<div><h3>Philosophy and Exploration</h3><p>Philosophy of science, interdisciplinary thinking, how things work at a fundamental level, learning by building</p></div>
+</div>
+<div class="lang">
+<svg viewBox="-42 -46 84 92" role="img" aria-label="Languages badge"><polygon points="0,-40 35,-20 35,20 0,40 -35,20 -35,-20"/><polygon points="0,-40 35,-20 35,20 0,40 -35,20 -35,-20" transform="scale(.8)" style="opacity:.45"/><path d="M-6 -9 L-14 0 L-6 9 M6 -9 L14 0 L6 9 M2 -12 L-2 12"/></svg>
+<div><h3>Languages</h3><div class="chips"><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>SQL</span></div></div>
 </div>
 </section>
 
-<section id="thoughts">
-<div class="sh"><h2>Thoughts</h2><p>Short notes from the work.</p></div>
-<div>
-<div class="q"><h3>On honesty</h3><p>A true low score is worth more than a false high one. If a result looks too good, check how the test was made.</p></div>
-<div class="q"><h3>On evidence</h3><p>Real data is messy and sometimes disappointing, which is exactly why it can be trusted.</p></div>
-<div class="q"><h3>On letting go</h3><p>Knowing when to pause a project is a skill. I kept what I learned and moved on.</p></div>
-</div>
-</section>
+
 
 <section id="journey">
 <div class="sh"><h2>Journey</h2><p>The path so far.</p></div>
@@ -162,7 +176,7 @@ footer .small{margin:40px 0 0;font-size:.85rem}
 <dt>2026</dt><dd><b>Began BSc AI &amp; Data Science</b>Semester 1 at the Institute of Advanced Research, Gandhinagar, learning Python and C.</dd>
 <dt>Building</dt><dd><b>Tools shared on GitHub</b>PaperGraph, AstroLens, SYNAPSE, RouteForge Lite and more.</dd>
 <dt>Exploring</dt><dd><b>Chasing exoplanets</b>Rebuilt TESSERACT several times and learned to test results honestly.</dd>
-<dt>Working</dt><dd><b>Data science internship</b>Sales analytics and customer churn with Python and Power BI.</dd>
+<dt>Working</dt><dd><b>Applied data science</b>Business sales analytics and customer churn with Python and Power BI.</dd>
 <dt>Space tech</dt><dd><b>Satellite Information &amp; Tracking System</b>A desktop app for exploring and managing satellite data.</dd>
 <dt class="now">Now</dt><dd><b>Choosing the next project</b>Something that joins physics, AI and space technology, built on real data or real hardware.</dd>
 </dl>
@@ -170,10 +184,10 @@ footer .small{margin:40px 0 0;font-size:.85rem}
 </main>
 
 <footer id="contact"><div class="wrap">
-<h2>Let’s talk.</h2>
-<p>Open to internships, research projects and teammates who like hard questions.</p>
-<a class="mail" href="mailto:Priyanshbyte2@gmail.com">Priyanshbyte2@gmail.com</a>
-<p class="small"><a href="https://github.com/Chauhan-legacy" style="border-bottom:1px solid var(--line)">GitHub</a></p>
+<h2>Let’s chase a hard question.</h2>
+<p>Research nobody has finished, a team that keeps asking why, an exploration task somewhere between physics, space and code. If that sounds like your next project, write to me.</p>
+<div class="actions"><a class="mail" href="mailto:Priyanshbyte2@gmail.com">Priyanshbyte2@gmail.com</a><button class="dec" id="cp" type="button">Copy email</button></div>
+<p class="small"><a href="https://github.com/Chauhan-legacy" style="border-bottom:1px solid var(--line)">GitHub</a> &nbsp;·&nbsp; <a href="#top" style="border-bottom:1px solid var(--line)">Back to top</a></p>
 <p class="small" style="margin-top:14px">Designed and built by Priyansh Chauhan, 2026</p>
 </div></footer>
 
@@ -233,7 +247,7 @@ if(!still&&'IntersectionObserver' in window){
  var io=new IntersectionObserver(function(es){es.forEach(function(e){
   if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.remove('rv','in')},1000)}
  })},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
- document.querySelectorAll('.sh,.row,.cols>div,.q,.big,.tl dt,.tl dd,.facts').forEach(function(el){el.classList.add('rv');io.observe(el)});
+ document.querySelectorAll('.sh,.row,.cols>div,.q,.big,.paper,.lang,.tl dt,.tl dd,.facts').forEach(function(el){el.classList.add('rv');io.observe(el)});
 }
 
 /* Current section in the menu */
@@ -246,6 +260,19 @@ if('IntersectionObserver' in window){
  })},{rootMargin:'-40% 0px -55% 0px'});
  document.querySelectorAll('section[id],footer[id]').forEach(function(s){so.observe(s)});
 }
+
+/* Light and dark switch */
+var tg=document.getElementById('tg');
+function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches}
+try{var saved=localStorage.getItem('theme');if(saved)root.setAttribute('data-theme',saved)}catch(e){}
+tg.addEventListener('click',function(){var next=isDark()?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('theme',next)}catch(e){}});
+
+/* Copy email */
+var cp=document.getElementById('cp');
+cp.addEventListener('click',function(){
+ var done=function(){cp.textContent='Copied';setTimeout(function(){cp.textContent='Copy email'},1800)};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText('Priyanshbyte2@gmail.com').then(done,function(){})}else{done()}
+});
 })();
 </script>
 </body>
